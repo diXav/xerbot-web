@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    background: rgb(14, 14, 37);
+    color: #fff;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+    height: 100vh;
+    width: 100%;
+    background-image: url('img/xerbot-bg.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: block;
+}
+
+.header-content {
+  font-size: 25px;
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  right: 25px;
+}
+
+.slider-wrapper {
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+}
+
+.slider{
+  font-size: 26px;
+  height: 30px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+.slider div {
+  color: rgb(0, 132, 255);
+  height: 50px;
+  margin-bottom: 50px;
+  padding: 2px 15px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.slider-text1 {
+  animation: slide 10s linear infinite;
+}
+
+@keyframes slide {
+  0% {margin-top:-500px;}
+  5% {margin-top:-400px;}
+  33% {margin-top:-400px;}
+  38% {margin-top:-300px;}
+  66% {margin-top:-300px;}
+  71% {margin-top:2px;}
+  100% {margin-top:2px;}
+}
+
+.header-content h2{
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.logo {
+    float: left;
+    cursor: pointer;
+    width: 50px;
+}
+
+.logo-text {
+    font-weight: 100;
+    float: left;
+    margin-left: 7px;
+    color: white;
+}
+
+.logo-container {
+    position: absolute;
+    margin: 2% 0 0 8%;
+}
+
+.btnContact {
+  display: block;
+    margin-top: 10px;
+    border: 2px solid rgb(0, 132, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: dodgerblue;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.btnContact:hover {
+    background-color:  rgb(0, 132, 255);
+    color: white;
+}
+
+.btnAcademia {
+    text-decoration: none;
+    position: absolute;
+    cursor: pointer;
+    margin: 2% 0 0 80%;
+    border: 2px solid rgb(0, 132, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: dodgerblue;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.btnAcademia:hover {
+    background-color:  rgb(0, 132, 255);
+    color: white;
+}
+
+.container {
+  z-index: auto;
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+/********* Contact modal ********/
+.contactModalA {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  background: rgb(21, 27, 34);
+  box-shadow: 4px 4px 5px rgb(10, 10, 10);
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.contactInfoA {
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+}
+
+.contactInfoA a :not(.btnBookA) {
+  padding-right: 8px;
+  padding-left: 8px;
+  color: white;
+}
+
+.contactInfoA i {
+  color: dodgerblue;
+}
+
+.contactInfoA i:hover {
+  color: dodgerblue;
+}
+
+.location {
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 40px;
+}
+
+.btnBookA {
+  padding-top: 5px;
+  display: block;
+  width: 100%;
+  justify-self: center;
+}
+
+.btnBookA a {
+  
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  width: 50%;
+  border: 2px solid rgb(0, 132, 255);
+  border-radius: 5px;
+  padding: 12px 22px;
+  color: dodgerblue;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+.btnBookA a:hover {
+  background-color:  rgb(0, 132, 255);
+  color: white;
+}
+
+.googleMap {
+  width: 100%;
+  height: 100%;
+}
+
+.location {
+  align-self: center;
+  justify-self: center;
+}
+
+/* The Close Button */
+.closeA {
+  position: absolute;
+  top: 4px;
+  left: 15px;
+  color:white;
+  padding-right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  justify-self: end;
+  align-self: center;
+}
+
+.closeA:hover,
+.closeA:focus {
+  color: rgb(0, 132, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Blur effect */
+@keyframes blurTransition {
+  from { filter: blur(0px); }
+  to { filter: blur(6px); }
+}
+
+.bgUnBlur > *:not(#contactModalA) {
+  animation-name: unBlurTransition;
+  animation-duration: .6s;
+  animation-delay: -.1s;
+}
+
+.bgBlur > *:not(#contactModalA) {
+  filter: blur(6px);
+  animation-name: blurTransition;
+  animation-duration: .6s;
+  animation-delay: -.1s;
+}
+
+@keyframes unBlurTransition {
+  from { filter: blur(6px); }
+  to { filter: blur(0px); }
+}
+
+/***** End of contact modal *****/
+
+@media (max-width: 750px) {
+  .header {
+    background-size: 150%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header-content {
+      text-align: center;
+      width: 100%;
+      top: 80%;
+  }
+
+  .header-content h2{
+      font-size: 21px;
+      font-weight: 100;
+  }
+
+  .header-content h3 {
+      font-size: 16px;
+      font-weight: 100;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 560px) {
+  .header {
+    height: 65vh;
+  }
+
+  .logo {
+    width: 35px;
+  }
+
+  .title {
+    font-size: 25px;
+    font-weight: 50;
+  }
+
+  .header-content {
+      text-align: center;
+      width: 100%;
+      top: 42%;
+  }
+
+  .header-content h2{
+      font-size: 14px;
+      font-weight: 100;
+  }
+
+  .header-content h3 {
+      font-size: 14px;
+      margin-top: -6px;
+      font-weight: 100;
+  }
+}
+
+/* Landscape */
+@media(max-height: 500px) {
+  .header-content {
+      text-align: center;
+      widows: 100%;
+      top: 42%;
+  }
+}

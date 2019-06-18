@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Xerbot</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="academia.css">
+        <!--Animate CSS-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        <!--JS-->
+    </head>
+
+    <body onload="typeWriter();">
+        <!--Header-->
+        <header class="header" id="header">
+            <!--logo-->
+            <div class="logo-container">
+                <a href="index.html">
+                    <img class="logo" src="img/logo.svg" alt="Xerbot logo">
+                </a>
+                <h2 class="logo-text">Academia</h2>
+            </div>
+            <!--Header content-->
+            <p class="header-content">Cursos de capacitación y nivelación<br><br>Hoy quiero aprender <span id="autoText"
+                    style="color:dodgerblue"></span></pcl>
+            <button class="btnContact" id="btnContactA">Contactar</button>
+            <p class="copyright">Xerbot &copy; 2019 - All rights reserved</p>
+        </header>
+        <!-- Modals -->
+        <!-- CONTACT MODAL -->
+        <div id="contactModalA" class="contactModalA">
+            <span class="closeA">&times;</span>
+            <div class="contactInfoA">
+                <i class="fas fa-user-graduate fa-4x"></i>
+                <p style="color:dodgerblue">Diego Jadán</p>
+                <p><i class="fas fa-mobile-alt"></i> 0984708139</p>
+                <p><i class="far fa-envelope"></i> xerbot.d@gmail.com</p>
+                <a href="https://wa.me/593961177708?text=Hola,%20me%20gustaría%20chatear%20con%20alguien" target="_blank"><i
+                        class="fab fa-whatsapp fa-2x"></i></a>
+                <a href="https://fb.me/xerbotec" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="https://m.me/xerbotec" target="_blank"><i class="fab fa-facebook-messenger fa-2x"></i></a>
+                <a href="https://instagr.am/xerbotec" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Fray Luis de León y Av. 12 de Octubre</p>
+                <div class="btnBookA">
+                    <a href="https://fb.com/book/xerbotec/" target="_blank">Reservar una cita</a>
+                </div>
+            </div>
+            <div id="googleMap" class="googleMap"></div>
+        </div>
+        <!-- JS -->
+        <script type="text/javascript" src="academia.js"></script>
+        <script>
+            function myMap() {
+                //Xerbot location
+                var xrbLocation = { lat: -2.911589, lng: -79.020233 };
+                //Map properties
+                var mapProp = {
+                    center: new google.maps.LatLng(-2.911589, -79.020233),
+                    styles: [{ "featureType": "all", "elementType": "all", "stylers": [{ "invert_lightness": true }, { "saturation": 10 }, { "lightness": 30 }, { "gamma": 0.5 }, { "hue": "#435158" }] }],
+                    zoom: 16,
+                    mapTypeControl: false,
+                    zoomControl: false
+                };
+                //map
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                // The marker, positioned at Xerbot
+                var marker = new google.maps.Marker({
+                    position: xrbLocation,
+                    icon: 'img/placeholder.png',
+                    map: map
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_5RbA7gx8qtQNoNMGTWqmCegQEdG5cpk&callback=myMap"></script>
+    </body>
+
+</html>
